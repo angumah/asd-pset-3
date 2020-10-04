@@ -42,12 +42,16 @@ public class SimpleStack {
         return s;
     }
     public int search(String s){
-        int index;
+        int index = 0;
         String searchString = s;
+        boolean notFound = true;
         for(int i = 0; i < size; i++){
-            if(searchString.equals(mainStack[i]));
-            index = i;
-            return size-index;
+            if(notFound){
+                if(mainStack[i].equals(s)){
+                    return index+1;
+                }
+            }
+            index++;
         }
 
         return -1;
@@ -65,4 +69,5 @@ public class SimpleStack {
         }
         return "[" + convert + "]";
     }
+
 }
